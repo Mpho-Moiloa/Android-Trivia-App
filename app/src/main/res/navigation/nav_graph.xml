@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivityFragment">
+    <fragment
+        android:id="@+id/mainActivityFragment"
+        android:name="com.example.trivia_app.MainActivityFragment"
+        android:label="fragment_main_activity"
+        tools:layout="@layout/fragment_main_activity" >
+        <action
+            android:id="@+id/navigate_to_select_quiz"
+            app:destination="@id/selectQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectQuizFragment"
+        android:name="com.example.trivia_app.SelectQuizFragment"
+        android:label="fragment_select_quiz"
+        tools:layout="@layout/fragment_select_quiz" >
+        <action
+            android:id="@+id/navigate_to_selectQuizzQuiestionaire"
+            app:destination="@id/selectQuizzQuiestionaire" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectQuizzQuiestionaire"
+        android:name="com.example.trivia_app.SelectQuizzQuiestionaire"
+        android:label="fragment_select_quizz_quiestionaire"
+        tools:layout="@layout/fragment_answer_quizz_quiestionaire" >
+        <action
+            android:id="@+id/navigate_to_quizSuccessFragment"
+            app:destination="@id/quizSuccessFragment" />
+        <action
+            android:id="@+id/navigate_to_quizFailureFragment"
+            app:destination="@id/quizFailureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizSuccessFragment"
+        android:name="com.example.trivia_app.quizSuccessFragment"
+        android:label="fragment_quiz_success"
+        tools:layout="@layout/fragment_quiz_success" >
+        <action
+            android:id="@+id/navigate_back_to_quiz"
+            app:destination="@id/selectQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFailureFragment"
+        android:name="com.example.trivia_app.QuizFailureFragment"
+        android:label="fragment_quiz_failure"
+        tools:layout="@layout/fragment_quiz_failure" >
+        <action
+            android:id="@+id/navigate_back_to_quiz"
+            app:destination="@id/selectQuizFragment" />
+    </fragment>
+</navigation>

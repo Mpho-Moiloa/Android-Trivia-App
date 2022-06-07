@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="line">-->
+<!--    <solid android:color="@android:color/white"/>-->
+<!--    <size android:width="280dp"/>-->
+
+
+<!--</shape>-->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white">
+        <!--BACKGROUND COLOR!!!-->
+        <shape android:layout_width="match_parent" android:shape="line">
+            <solid android:color="#B9DBFB" />
+            <corners android:width="280dp" />
+        </shape>
+    </item>
+</selector>
