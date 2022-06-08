@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.select_quiz_view_holder.view.*
 
@@ -26,13 +27,14 @@ class SelectQuizAdapter (
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val cardview : ConstraintLayout = itemView.card_view_holder
         val titleView: TextView = itemView.card_view_title
         val descriprionView: TextView = itemView.card_view_description
 
         fun initialiser(quizItem: QuizItem, action: QuizAdapterListener){
             titleView.text = quizItem.text
             descriprionView.text = quizItem.description
-            titleView.setOnClickListener{
+            cardview.setOnClickListener{
                 view -> action.onQuizClick(quizItem, adapterPosition, view)
             }
         }
